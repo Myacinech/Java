@@ -23,7 +23,7 @@ public class Enchere_CRUD
         
 {
     
-   /* public void ajouterEnchere(){
+    public void ajouterEnchere(){
         String requete; 
         requete = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES ('Voirie3', 123547892111, 'travaux de chaussée d''un quartier résidentiel', '2023-02-10', '2023-03-10', 250000);";
         Statement st ;
@@ -34,7 +34,7 @@ public class Enchere_CRUD
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-    }*/
+    }
     
     public void ajouterEnchere2(Enchere e ){
         try {
