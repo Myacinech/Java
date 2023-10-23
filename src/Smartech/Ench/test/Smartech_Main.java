@@ -5,6 +5,7 @@
  */
 package Smartech.Ench.test;
 
+import Smartech.Ench.services.Enchere_CRUD;
 import Smartech.Ench.tools.MyBD;
 
 /**
@@ -13,7 +14,9 @@ import Smartech.Ench.tools.MyBD;
  */
 public class Smartech_Main {
     public static void main(String[] args) {
-        MyBD mc = new MyBD()  ;
+       // MyBD mc = new MyBD()  ;
+       Enchere_CRUD ECR= new  Enchere_CRUD();
+       ECR.ajouterEnchere();
     }
     
 }

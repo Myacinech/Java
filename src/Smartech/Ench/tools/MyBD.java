@@ -21,6 +21,7 @@ public class MyBD {
     public  String pwd="";
     Connection cnx ; 
     
+    
     public MyBD(){
        
         
@@ -31,9 +32,6 @@ public class MyBD {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        
-        
-        
         
     }
 
