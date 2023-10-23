@@ -13,14 +13,16 @@ import java.util.List;
  */
 public class Proposition {
     private String nom_prestataire;
+    private String Id_Entreprise; 
     private String numero_telephone;
     private String mail;
     private String Titre;
     private double montant;
     private String message;
 
-    public Proposition(String nom_prestataire, String numero_telephone, String mail, String Titre, double montant, String message) {
+    public Proposition(String nom_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
         this.nom_prestataire = nom_prestataire;
+        this.Id_Entreprise = Id_Entreprise;
         this.numero_telephone = numero_telephone;
         this.mail = mail;
         this.Titre = Titre;
@@ -34,8 +36,15 @@ public class Proposition {
 
     public void setNom_prestataire(String nom_prestataire) {
         this.nom_prestataire = nom_prestataire;
+        
+    }
+    public String getId_Entreprise() {
+        return Id_Entreprise;
     }
 
+    public void setId_Entreprise(String Id_Entreprise) {
+        this.Id_Entreprise = Id_Entreprise;
+    }
     public String getNumero_telephone() {
         return numero_telephone;
     }
@@ -75,10 +84,12 @@ public class Proposition {
     public void setMessage(String message) {
         this.message = message;
     }
+    
+    
 
     @Override
     public String toString() {
-        return "Proposition{" + "nom_prestataire=" + nom_prestataire + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
+        return "Proposition{" + "nom_prestataire=" + nom_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
     }
 
     
