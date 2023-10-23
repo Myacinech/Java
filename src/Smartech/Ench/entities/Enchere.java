@@ -23,6 +23,7 @@ public class Enchere {
     private Date dateDebut;
     private Date dateFin;
     private double offre_initial;
+    
 
     public Enchere(String Titre, String Id, String Description, Date dateDebut, Date dateFin, double offre_initial) {
         this.Titre = Titre;
