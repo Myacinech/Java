@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package Smartech.Ench.entities;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author yacin
@@ -28,6 +25,10 @@ public class Proposition {
         this.Titre = Titre;
         this.montant = montant;
         this.message = message;
+    }
+
+    public Proposition() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNom_prestataire() {
@@ -84,14 +85,9 @@ public class Proposition {
     public void setMessage(String message) {
         this.message = message;
     }
-    
-    
-
-    @Override
+      @Override
     public String toString() {
         return "Proposition{" + "nom_prestataire=" + nom_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
     }
-
-    
-    
+  
 }

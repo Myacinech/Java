@@ -6,17 +6,12 @@
 package Smartech.Ench.entities;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  *
  * @author yacin
  */
 public class Enchere {
-
-    public static void add(Enchere nouvelleEnchere) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     private String Titre;
     private String Id; 
     private String Description;
@@ -33,15 +28,6 @@ public class Enchere {
         this.dateFin = dateFin;
         this.offre_initial = offre_initial;
     }
-
-    public Enchere(String Titre, String description, String dateDebut, String dateFin, double offre_initial) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Enchere(String Titre, String Id, String description, String dateDebut, String dateFin, double offre_initial) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public String getTitre() {
         return Titre;
     }

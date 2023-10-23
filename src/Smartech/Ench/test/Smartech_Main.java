@@ -20,7 +20,7 @@ public class Smartech_Main {
         //mc = new MyBD();
        Enchere_CRUD ECR= new  Enchere_CRUD();
        Enchere Enc;
-        Enc = new Enchere();
+        Enc = new Enchere("","125478689","","10-25-10","10-12-23",);
        ECR.ajouterEnchere2(Enc);
        Proposition_CRUD PCR;
         PCR = new Proposition_CRUD();
