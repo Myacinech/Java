@@ -12,9 +12,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author yacin
@@ -58,13 +55,45 @@ public class Enchere_CRUD
         return null;
         
     }
-    public void modifierEnchere(){
+    public void modifierEnchere(Enchere e, String d ){
+        
+        try {
+            String sql = "UPDATE enchere SET `Titre`=?,`Description`=?,`dateDebut`=?,`dateFin`=? ,`offre_initial`=? WHERE Id=" + d;
+            PreparedStatement ste = new MyBD().getCnx().prepareStatement(sql);
+           
+            ste.setString(1,e.getTitre());
+            ste.setString(2,e.getDescription());
+            ste.setDate(3, (Date) e.getDateDebut());
+            ste.setDate(4, (Date) e.getDateFin());
+            ste.setDouble(5,e.getOffre_initial());
+            ste.executeUpdate();
+        
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
         
     }
-    public void supprimerEnchere(){
+    public void supprimerEnchere(String c){
         
-    }
-    public void rechercherEnchere(){
+          try {
+            
+            String req5;
+            req5 = "DELETE FROM `enchere` WHERE `enchere`.`Id` = ?" ;
+            PreparedStatement ste = new MyBD().getCnx().prepareStatement(req5);
+            ste.setString(1,c);
+            ste.executeUpdate();
+            System.out.println("L'enchère a été supprimée avec succés ");
+        
+        
+        
+        
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+      }  
+   
+    public void rechercherEnchere(Enchere e , String d){
         
     }
 }
