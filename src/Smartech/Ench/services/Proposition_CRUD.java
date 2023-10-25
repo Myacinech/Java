@@ -144,30 +144,5 @@ public class Proposition_CRUD {
         }
     }
     
-    public void ajouterEnchere2(Enchere e ){
-        try {
-        String requete2; 
-        requete2 = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES (?, ?, ?, ?, ?, ?);";
-        PreparedStatement pst;
-        pst = new MyBD().getCnx().prepareStatement(requete2);
-        pst.setString(1,e.getTitre());
-        pst.setString(2,e.getId());
-        pst.setString(3,e.getDescription());
-        pst.setDate(4, (Date) e.getDateDebut());
-        pst.setDate(5, (Date) e.getDateFin());
-        pst.setDouble(6,e.getOffre_initial());
-        pst.executeUpdate();
-        System.out.println("votre Enchere a été ajoute avec succès ");
-                    } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
-    public List<Enchere> afficherEnchere(){
-        return null;
-        
-    }
    
-   
-   
-    
-}
+ }

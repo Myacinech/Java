@@ -53,24 +53,25 @@ public class Enchere_CRUD
             System.err.println(ex.getMessage());
         }
     }
+    
     public List<Enchere> afficherEnchere(){
         List<Enchere> MyList;
         MyList = new ArrayList<>();
     try {
         String req3;
         req3 = " SELECT * FROM Enchere";
-        Statement st = null; 
-                st = (Statement) new MyBD().getCnx().createStatement();
-        ResultSet rs=null;
+        Statement st; 
+             st = (Statement) new MyBD().getCnx().createStatement();
+        ResultSet rs;
             rs = st.executeQuery (req3);
     while (rs.next());
             Enchere e;
-            e = new Enchere();
+            e= new Enchere(); 
             e.setTitre(rs.getString("Titre"));
             e.setId(rs.getString("Id"));
             e.setDescription(rs.getString("Description"));
-            e.setdateDebut(rs.getDate("dateDebut"));
-            e.setdateFin(rs.getDate("dateFin"));
+            e.setDateDebut(rs.getDate("dateDebut"));
+            e.setDateFin(rs.getDate("dateFin"));
             e.setOffre_initial(rs.getDouble("offre_initial"));
             MyList.add(e);     
         } catch (SQLException ex) {
@@ -107,9 +108,6 @@ public class Enchere_CRUD
             ste.setString(1,c);
             ste.executeUpdate();
             System.out.println("L'enchère a été supprimée avec succés ");
-        
-        
-        
         
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());

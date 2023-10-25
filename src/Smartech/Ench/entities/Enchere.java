@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author yacin
  */
-public class Enchere {
+public class Enchere{
     private String Titre;
     private String Id; 
     private String Description;
@@ -27,6 +27,10 @@ public class Enchere {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.offre_initial = offre_initial;
+    }
+
+    public Enchere() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public String getTitre() {
         return Titre;
