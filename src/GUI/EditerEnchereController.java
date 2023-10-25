@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Smartech.Ench.entities.Proposition;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -23,5 +24,21 @@ public class EditerEnchereController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    private void BtnSupprimer() {
+    	String query = "DELETE FROM Proposition WHERE ID="+idField.getText()+"";
+    	executeQuery(query);
+    	showProposition();
+    }
     
+    public void showProposition() {
+    	ObservableList<Proposition> list = getPropositionList();
+    	
+    	idColumn.setCellValueFactory(new PropertyValueFactory<Proposition,String>("id"));
+    	titleColumn.setCellValueFactory(new PropertyValueFactory<Proposition,String>("title"));
+    	authorColumn.setCellValueFactory(new PropertyValueFactory<Proposition,String>("author"));
+    	yearColumn.setCellValueFactory(new PropertyValueFactory<Proposition,String>("year"));
+    	pagesColumn.setCellValueFactory(new PropertyValueFactory<Proposition,Double>("pages"));
+    	
+    	TableView.setItems(list);
+    }
 }

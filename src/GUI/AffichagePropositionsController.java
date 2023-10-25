@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Smartech.Ench.entities.Proposition;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,19 +27,19 @@ public class AffichagePropositionsController implements Initializable {
     @FXML
     private TableView<?> table;
     @FXML
-    private TableColumn<?, ?> tdNom;
+    private TableColumn<Proposition, String> tdNom;
     @FXML
-    private TableColumn<?, ?> tdId;
+    private TableColumn<Proposition, String> tdId;
     @FXML
-    private TableColumn<?, ?> tdMail;
+    private TableColumn<Proposition, String> tdMail;
     @FXML
-    private TableColumn<?, ?> tdTitre;
+    private TableColumn<Proposition, String> tdTitre;
     @FXML
-    private TableColumn<?, ?> tdMontant;
+    private TableColumn<Proposition, Double> tdMontant;
     @FXML
-    private TableColumn<?, ?> tdMessage;
+    private TableColumn<Proposition, String> tdMessage;
     @FXML
-    private TableColumn<?, ?> tdNumero_telephone;
+    private TableColumn<Proposition, String> tdNumero_telephone;
 
     /**
      * Initializes the controller class.
