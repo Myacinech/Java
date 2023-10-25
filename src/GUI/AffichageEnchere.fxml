@@ -30,13 +30,13 @@
             <TableColumn prefWidth="75.0" text="Offre Initial" />
         </columns>
       </TableView>
-      <SplitMenuButton layoutX="482.0" layoutY="214.0" mnemonicParsing="false" text="Menu">
+      <SplitMenuButton fx:id="BtnMenu" layoutX="482.0" layoutY="214.0" mnemonicParsing="false" text="Menu">
         <items>
           <MenuItem mnemonicParsing="false" text="Supprimer" />
           <MenuItem mnemonicParsing="false" text="Modifier" />
         </items>
       </SplitMenuButton>
-      <Button layoutX="534.0" layoutY="355.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="BtnRetour" layoutX="534.0" layoutY="355.0" mnemonicParsing="false" onAction="#Retour" text="Retour" />
       <ToggleButtonGroup layoutX="84.0" layoutY="343.0" selectionType="SINGLE">
           <toggles>
               <ToggleButton />
