@@ -7,6 +7,7 @@ package GUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,15 +25,17 @@ public class AjoutEnchereController implements Initializable {
     @FXML
     private Button btnRetour;
     @FXML
+    private TextField tfId;
+    @FXML
+    private TextField tfTitre;
+    @FXML
+    private Button btnAjouter;
+    @FXML
     private DatePicker dpdatedebut;
     @FXML
     private DatePicker dpdatefin;
     @FXML
     private TextField tfDescription;
-    @FXML
-    private TextField tfId;
-    @FXML
-    private TextField tfTitre;
 
     /**
      * Initializes the controller class.
@@ -43,6 +46,15 @@ public class AjoutEnchereController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+
+    @FXML
+    private void retour(ActionEvent event) {
+    }
+
+    @FXML
+    private void Ajouter(ActionEvent event) {
+    }
 
     @FXML
     private void offre_initial(MouseEvent event) {

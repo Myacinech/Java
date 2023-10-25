@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -23,7 +25,19 @@ public class AffichageEnchereController implements Initializable {
     @FXML
     private Button BtnRetour;
     @FXML
-    private SplitMenuButton BtnMenu;
+    private TableView<?> table;
+    @FXML
+    private TableColumn<?, ?> tdTitre;
+    @FXML
+    private TableColumn<?, ?> tdId;
+    @FXML
+    private TableColumn<?, ?> tdDescription;
+    @FXML
+    private TableColumn<?, ?> tdDateDebut;
+    @FXML
+    private TableColumn<?, ?> tdDateFin;
+    @FXML
+    private TableColumn<?, ?> tdOffreInitial;
 
     /**
      * Initializes the controller class.
