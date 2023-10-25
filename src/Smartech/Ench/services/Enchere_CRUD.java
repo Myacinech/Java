@@ -10,6 +10,7 @@ import Smartech.Ench.tools.MyBD;
 import com.mysql.jdbc.Statement;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,29 @@ public class Enchere_CRUD
         }
     }
     public List<Enchere> afficherEnchere(){
-        return null;
+        List<Enchere> MyList;
+        MyList = new ArrayList<>();
+    try {
+        String req3;
+        req3 = " SELECT * FROM Enchere";
+        Statement st = null; 
+                st = (Statement) new MyBD().getCnx().createStatement();
+        ResultSet rs=null;
+            rs = st.executeQuery (req3);
+    while (rs.next());
+            Enchere e;
+            e = new Enchere();
+            e.setTitre(rs.getString("Titre"));
+            e.setId(rs.getString("Id"));
+            e.setDescription(rs.getString("Description"));
+            e.setdateDebut(rs.getDate("dateDebut"));
+            e.setdateFin(rs.getDate("dateFin"));
+            e.setOffre_initial(rs.getDouble("offre_initial"));
+            MyList.add(e);     
+        } catch (SQLException ex) {
+          System.err.println(ex.getMessage());
+        }
+    return MyList;
         
     }
     public void modifierEnchere(Enchere e, String d ){
