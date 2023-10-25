@@ -64,7 +64,7 @@ public class Proposition_CRUD {
             while (rs.next());
                 Proposition p; 
             p = new Proposition();
-            p.setId_Entreprise(re.get);
+            p.setId_Entreprise(rs.get);
         } catch (SQLException ex) {
           System.err.println(ex.getMessage());
         }

@@ -11,6 +11,7 @@ import com.mysql.jdbc.Statement;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -93,7 +94,21 @@ public class Enchere_CRUD
 
       }  
    
-    public void rechercherEnchere(Enchere e , String d){
+    public List<Enchere> rechercherEnchere( String d){
+        List<Enchere> resultats = new ArrayList<>();
+        Iterable<Enchere> encheres = null;
+        
+        for (Enchere enchere : encheres)
+        {
+            if (enchere.getId().contains(d))
+            {
+                resultats.add(enchere);
+                
+            }
+        }
+           return resultats;
+           
+
         
     }
 }
