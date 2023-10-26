@@ -143,6 +143,10 @@ public class Proposition_CRUD {
             System.err.println(ex.getMessage());
         }
     }
+
+    public void ajouterProposition2(Proposition_CRUD PCR) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    
  }
