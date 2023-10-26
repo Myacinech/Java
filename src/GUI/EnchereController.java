@@ -6,6 +6,7 @@
 package GUI;
 
 import Smartech.Ench.entities.Enchere;
+import Smartech.Ench.tools.MyBD;
 import com.mysql.jdbc.Connection;
 import java.net.URL;
 import java.sql.DriverManager;
@@ -94,10 +95,10 @@ public class EnchereController implements Initializable {
             	
     	table.setItems(list);
     }
-    public Connection getConnection() {
-    	Connection conn;
+    public MyBD getConnection() {
+    	MyBD conn;
     	try {
-    		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","admin");
+    		conn = (MyBD) DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","admin");
     		return conn;
     	}
     	catch (SQLException e){
@@ -106,7 +107,7 @@ public class EnchereController implements Initializable {
     }
     public ObservableList<Enchere> getenchereList(){
     	ObservableList<Enchere> enchereList = FXCollections.observableArrayList();
-    	Connection connection = getConnection();
+    	MyBD connection = getConnection();
     	String query = "SELECT * FROM enchere ";
     	Statement st;
     	ResultSet rs;
@@ -125,7 +126,7 @@ public class EnchereController implements Initializable {
     }
 
     public void executeQuery(String query) {
-    	Connection conn = getConnection();
+    	MyBD conn = getConnection();
     	Statement st;
     	try {
 
