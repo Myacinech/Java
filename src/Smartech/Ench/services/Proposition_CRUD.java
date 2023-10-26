@@ -12,8 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author yacin
@@ -142,11 +140,6 @@ public class Proposition_CRUD {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-    }
-
-    public void ajouterProposition2(Proposition_CRUD PCR) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    }  
    
  }

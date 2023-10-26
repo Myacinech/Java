@@ -88,5 +88,11 @@ public class Proposition {
     public String toString() {
         return "Proposition{" + "nom_prestataire=" + nom_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
     }
+
+    public void ajouterProposition() {
+    }
+
+    public void ajouterProposition2(Proposition PCR) {
+    }
   
 }

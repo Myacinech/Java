@@ -6,6 +6,7 @@
 package Smartech.Ench.test;
 
 import Smartech.Ench.entities.Enchere;
+import Smartech.Ench.entities.Proposition;
 import Smartech.Ench.services.Enchere_CRUD;
 import Smartech.Ench.services.Proposition_CRUD;
 import Smartech.Ench.tools.MyBD;
@@ -23,8 +24,9 @@ public class Smartech_Main {
        Enc = new Enchere();
        ECR.ajouterEnchere();
        ECR.ajouterEnchere2(Enc);
-       Proposition_CRUD PCR;
-       PCR = new Proposition_CRUD();
+      // Proposition_CRUD PCR = new Proposition_CRUD();
+       Proposition PCR;
+       PCR =new Proposition();
        PCR.ajouterProposition();
        PCR.ajouterProposition2(PCR);
        }
