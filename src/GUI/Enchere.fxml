@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #1454;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="GUI.EnchereController">
+   <children>
+      <Label layoutX="233.0" layoutY="14.0" prefHeight="34.0" prefWidth="142.0" text="Encheres" textFill="#df0b0b">
+         <font>
+            <Font name="Arial Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="304.0" layoutY="145.0" prefHeight="200.0" prefWidth="457.0">
+        <columns>
+          <TableColumn fx:id="tdTitre" prefWidth="75.0" text="Titre" />
+            <TableColumn fx:id="tdID" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="tdDecsrp" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="tdDD" prefWidth="75.0" text="Date Debut" />
+            <TableColumn fx:id="tdDF" prefWidth="75.0" text="Date Fin" />
+            <TableColumn fx:id="tdOffre" prefWidth="75.0" text="Offre Initiale" />
+        </columns>
+      </TableView>
+      <TextField fx:id="titre" layoutX="100.0" layoutY="118.0" />
+      <TextField fx:id="id" layoutX="100.0" layoutY="155.0" />
+      <TextField fx:id="offre" layoutX="100.0" layoutY="285.0" />
+      <TextField fx:id="description" layoutX="100.0" layoutY="187.0" />
+      <DatePicker fx:id="datefin" layoutX="100.0" layoutY="250.0" />
+      <DatePicker fx:id="datedebut" layoutX="100.0" layoutY="219.0" />
+      <Label layoutX="43.0" layoutY="122.0" text="Titre" />
+      <Label layoutX="50.0" layoutY="159.0" text="ID" />
+      <Label layoutX="25.0" layoutY="191.0" text="Description" />
+      <Label layoutX="25.0" layoutY="223.0" text="Date Debut" />
+      <Label layoutX="27.0" layoutY="254.0" text="Date Fin" />
+      <Label layoutX="22.0" layoutY="289.0" text="Offre Initiale" />
+      <ImageView fitHeight="100.0" fitWidth="197.0" layoutX="2.0">
+         <image>
+            <Image url="@../../../../Downloads/encheres-en-ligne.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnAjouter" layoutX="41.0" layoutY="340.0" mnemonicParsing="false" text="Ajouter" />
+      <Button fx:id="BtnModifier" layoutX="123.0" layoutY="340.0" mnemonicParsing="false" text="Modifier" />
+      <Button fx:id="BtnSupprimer" layoutX="203.0" layoutY="340.0" mnemonicParsing="false" text="Supprimer" />
+      <ImageView fitHeight="18.0" fitWidth="34.0" layoutX="275.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="100.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/edit_1.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="recherche" layoutX="435.0" layoutY="100.0" prefHeight="26.0" prefWidth="162.0" />
+      <Label layoutX="350.0" layoutY="105.0" text="Recherche">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="713.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/return.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

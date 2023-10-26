@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="850.0" style="-fx-background-color: #1454;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="GUI.PropositionController">
+   <children>
+      <TableView fx:id="table" layoutX="317.0" layoutY="174.0" prefHeight="234.0" prefWidth="518.0">
+        <columns>
+          <TableColumn fx:id="tdNom" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="tdIdEntr" prefWidth="75.0" text="Id Entrp" />
+            <TableColumn fx:id="tdTel" prefWidth="75.0" text="N° Tel" />
+            <TableColumn fx:id="tdMail" prefWidth="75.0" text="Mail" />
+            <TableColumn fx:id="tdTitre" prefWidth="75.0" text="Titre" />
+            <TableColumn fx:id="tdMontant" prefWidth="75.0" text="Montant" />
+            <TableColumn fx:id="tdMessage" prefWidth="75.0" text="Message" />
+        </columns>
+      </TableView>
+      <Button fx:id="BtnAjouter" layoutX="51.0" layoutY="442.0" mnemonicParsing="false" text="Ajouter" />
+      <Button fx:id="BtnModifier" layoutX="131.0" layoutY="442.0" mnemonicParsing="false" text="Modifier" />
+      <Button fx:id="BtnSupprimer" layoutX="205.0" layoutY="442.0" mnemonicParsing="false" text="Supprimer" />
+      <ImageView fitHeight="112.0" fitWidth="214.0">
+         <image>
+            <Image url="@../../../../Downloads/R.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="18.0" fitWidth="34.0" layoutX="283.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="107.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/edit_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="794.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/Compressed/JAVA-master/src/GUI/image/return.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="256.0" layoutY="28.0" prefHeight="56.0" prefWidth="199.0" text="Propositions" textFill="#0f24d9">
+         <font>
+            <Font name="Arial Bold Italic" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="134.0" text="Recherche">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Nom" layoutX="118.0" layoutY="155.0" />
+      <TextField fx:id="Rech" layoutX="516.0" layoutY="129.0" />
+      <TextField fx:id="Tel" layoutX="118.0" layoutY="224.0" />
+      <TextField fx:id="id_Entr" layoutX="118.0" layoutY="192.0" />
+      <TextField fx:id="Mail" layoutX="118.0" layoutY="257.0" />
+      <TextField fx:id="Titre" layoutX="118.0" layoutY="291.0" />
+      <TextField fx:id="Montant" layoutX="118.0" layoutY="326.0" />
+      <TextField fx:id="Message" layoutX="118.0" layoutY="359.0" />
+      <Label layoutX="34.0" layoutY="160.0" text="Nom">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="197.0" text="Id_Entreprise">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="229.0" text="N° Tel">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="262.0" text="Mail">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="296.0" text="Titre">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="331.0" text="Montant">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="364.0" text="Message">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
