@@ -84,7 +84,7 @@ public class PropositionController implements Initializable {
         tdMontant.setCellValueFactory(new PropertyValueFactory<>("Montant"));
         tdMessage.setCellValueFactory(new PropertyValueFactory<>("Message"));
     	
-    	TableView.setItems(list);
+    	table.setItems(list);
     }
     
 

@@ -6,8 +6,13 @@
 package GUI;
 
 import Smartech.Ench.entities.Enchere;
+import com.mysql.jdbc.Connection;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javax.resource.cci.ResultSet;
 
 /**
  * FXML Controller class
@@ -85,39 +92,51 @@ public class EnchereController implements Initializable {
     	tdDF.setCellValueFactory(new PropertyValueFactory<>("DateFin"));
         tdOffre.setCellValueFactory(new PropertyValueFactory<>("Offre"));
             	
-    	TableView.setItems(list);
+    	table.setItems(list);
     }
-    
-    public ObservableList<Enchere> getBooksList(){
-    	ObservableList<Enchere> booksList = FXCollections.observableArrayList();
+    public Connection getConnection() {
+    	Connection conn;
+    	try {
+    		conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","admin");
+    		return conn;
+    	}
+    	catch (SQLException e){
+    		return null;
+    	}
+    }
+    public ObservableList<Enchere> getenchereList(){
+    	ObservableList<Enchere> enchereList = FXCollections.observableArrayList();
     	Connection connection = getConnection();
-    	String query = "SELECT * FROM books ";
+    	String query = "SELECT * FROM enchere ";
     	Statement st;
     	ResultSet rs;
     	
     	try {
 			st = connection.createStatement();
-			rs = st.executeQuery(query);
+			rs = (ResultSet) st.executeQuery(query);
 			Enchere enchere;
 			while(rs.next()) {
 				enchere = new Enchere(rs.getInt("Titre"),rs.getString("Id"),rs.getString("Author"),rs.getInt("Year"),rs.getInt("Pages"));
-				booksList.add(enchere);
+				enchereList.add(enchere);
 				}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
 		}
-    	return booksList;
+    	return enchereList;
     }
 
     public void executeQuery(String query) {
     	Connection conn = getConnection();
     	Statement st;
     	try {
-			st = conn.createStatement();
+
+            st = conn.createStatement();
 			st.executeUpdate(query);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
 		}
     }
+
+    private ObservableList<Enchere> getEnchereList() {
+        return null;
+         }
     
 }
