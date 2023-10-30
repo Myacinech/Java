@@ -6,7 +6,11 @@
 package GUI;
 
 import Smartech.Ench.entities.Proposition;
+import Smartech.Ench.tools.MyBD;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -47,20 +51,24 @@ public class PropositionController implements Initializable {
     @FXML
     private Button BtnSupprimer;
 
-    private void BtnAjouter() {
-    	String query = "insert into proposition values("+tdNom.getText()+",'"+tdIdEntr.getText()+"','"+tdTel.getText()+"',"+tdMail.getText()+","+tdTitre.getText()+","+tdMontant.getText()+","+tdMessage.getText()+" )";
-    	executeQuery(query);
-    	afficherProposition();
-    }
+    
     /**
      * Initializes the controller class.
      * @param url
      * @param rb
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    private void BtnAjouter() {
+    	String query = "insert into proposition values("+tdNom.getText()+",'"+tdIdEntr.getText()+"','"+tdTel.getText()+"',"+tdMail.getText()+","+tdTitre.getText()+","+tdMontant.getText()+","+tdMessage.getText()+" )";
+    	executeQuery(query);
+    	afficherProposition();
+    }
+    
     private void BtnModifier() {
     String query = "UPDATE proposition SET Nom='"+tdNom.getText()+"',Id='"+tdIdEntr.getText()+"',Tel="+tdTel.getText()+",Mail="+tdMail.getText()+",Montant="+tdMontant.getText()+ ",Message="+tdMessage.getText()+" WHERE ID="+tdIdEntr.getText()+"";
     executeQuery(query);
@@ -86,16 +94,24 @@ public class PropositionController implements Initializable {
     	
     	table.setItems(list);
     }
-    
+     public MyBD getConnection() {
+    	MyBD conn;
+    	try {
+    		conn = (MyBD) DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","admin");
+    		return conn;
+    	}
+    	catch (SQLException e){
+    		return null;
+    	}
+    }
 
     public void executeQuery(String query) {
-    	Connection conn = getConnection();
+    	MyBD conn = getConnection();
     	Statement st;
     	try {
 			st = conn.createStatement();
 			st.executeUpdate(query);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException e) {
 		}
     }
     private ObservableList<Proposition> getPropositionList() {

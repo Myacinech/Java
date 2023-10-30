@@ -32,6 +32,10 @@ public class Enchere{
     public Enchere() {
     }
 
+    public Enchere(int aInt, String string, String string0, int aInt0, int aInt1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getTitre() {
         return Titre;
     }
