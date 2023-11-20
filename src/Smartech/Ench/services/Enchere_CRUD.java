@@ -41,8 +41,8 @@ public class Enchere_CRUD
         requete2 = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES (?, ?, ?, ?, ?, ?);";
         PreparedStatement pst;
         pst = new MyBD().getCnx().prepareStatement(requete2);
-        pst.setString(1,e.getTitre());
-        pst.setString(2,e.getId());
+        pst.setString(1,e.getId());
+        pst.setString(2,e.getTitre());
         pst.setString(3,e.getDescription());
         pst.setDate(4, (Date) e.getDateDebut());
         pst.setDate(5, (Date) e.getDateFin());

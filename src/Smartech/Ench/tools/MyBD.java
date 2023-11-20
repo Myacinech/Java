@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class MyBD {
 
-    public String url="jdbc:mysql://localhost:3306/smartech_yacine";
+    public String url="jdbc:mysql://localhost:3306/env";
     public String  login="root";
     public  String pwd="";
     Connection cnx ; 

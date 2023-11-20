@@ -8,7 +8,6 @@ package Smartech.Ench.test;
 import Smartech.Ench.entities.Enchere;
 import Smartech.Ench.entities.Proposition;
 import Smartech.Ench.services.Enchere_CRUD;
-import Smartech.Ench.services.Proposition_CRUD;
 import Smartech.Ench.tools.MyBD;
 
 /**

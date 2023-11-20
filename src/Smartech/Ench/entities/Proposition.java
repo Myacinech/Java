@@ -9,7 +9,7 @@ package Smartech.Ench.entities;
  * @author yacin
  */
 public class Proposition {
-    private String nom_prestataire;
+    private String id_prestataire;
     private String Id_Entreprise; 
     private String numero_telephone;
     private String mail;
@@ -17,8 +17,8 @@ public class Proposition {
     private double montant;
     private String message;
 
-    public Proposition(String nom_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
-        this.nom_prestataire = nom_prestataire;
+    public Proposition(String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
+        this.id_prestataire = id_prestataire;
         this.Id_Entreprise = Id_Entreprise;
         this.numero_telephone = numero_telephone;
         this.mail = mail;
@@ -31,11 +31,11 @@ public class Proposition {
     }
 
     public String getNom_prestataire() {
-        return nom_prestataire;
+        return id_prestataire;
     }
 
     public void setNom_prestataire(String nom_prestataire) {
-        this.nom_prestataire = nom_prestataire;
+        this.id_prestataire = id_prestataire;
         
     }
     public String getId_Entreprise() {
@@ -86,13 +86,21 @@ public class Proposition {
     }
       @Override
     public String toString() {
-        return "Proposition{" + "nom_prestataire=" + nom_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
+        return "Proposition{" + "id_prestataire=" + id_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
     }
 
     public void ajouterProposition() {
     }
 
     public void ajouterProposition2(Proposition PCR) {
+    }
+
+    public String getid_prestataire() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setid_prestataire(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }

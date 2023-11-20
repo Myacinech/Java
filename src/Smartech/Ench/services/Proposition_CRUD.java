@@ -20,7 +20,7 @@ public class Proposition_CRUD {
     
     public void ajouterProposition(){
         String requete; 
-        requete = "INSERT INTO proposition (nom_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES ('Voirie', 12,12354789, 'travaux@esprit.tn', 'voirie1', 250000,' je suivrai les regles et le cahier de charge' );";
+        requete = "INSERT INTO proposition (id_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES ('Voirie', 12,12354789, 'travaux@esprit.tn', 'voirie1', 250000,' je suivrai les regles et le cahier de charge' );";
         Statement st ;
         try {
             st = (Statement) new MyBD().getCnx().createStatement();
@@ -34,10 +34,10 @@ public class Proposition_CRUD {
     public void ajouterProposition2(Proposition p ){
         try {
         String req; 
-        req = "INSERT INTO proposition (nom_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES (?, ?, ?, ?, ?, ?,?);";
+        req = "INSERT INTO proposition (id_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES (?, ?, ?, ?, ?, ?,?);";
         PreparedStatement pst;
         pst = new MyBD().getCnx().prepareStatement(req);
-        pst.setString(1,p.getNom_prestataire());
+        pst.setString(1,p.getid_prestataire());
         pst.setString(2,p.getId_Entreprise());
         pst.setString(3,p.getNumero_telephone());
         pst.setString(4,p.getMail());
@@ -63,7 +63,7 @@ public class Proposition_CRUD {
     while (rs.next());
             Proposition p; 
             p = new Proposition();
-            p.setNom_prestataire(rs.getString("Nom_prestataire"));
+            p.setid_prestataire(rs.getString("id_prestataire"));
             p.setId_Entreprise(rs.getString("Id_Entreprise"));
             p.setNumero_telephone(rs.getString("numero_telephone"));
             p.setMail(rs.getString("Mail"));
@@ -82,10 +82,10 @@ public class Proposition_CRUD {
         
         
         try {
-            String sql = "UPDATE proposition SET `Nom_prestataire`=?,`Numero_telephone`=?,`Mail`=?,`Titre`=? ,`Montant`=?,`Message`=? WHERE Id_Entreprise=" + d;
+            String sql = "UPDATE proposition SET `id_prestataire`=?,`Numero_telephone`=?,`Mail`=?,`Titre`=? ,`Montant`=?,`Message`=? WHERE Id_Entreprise=" + d;
             PreparedStatement pst = new MyBD().getCnx().prepareStatement(sql);
            
-        pst.setString(1,p.getNom_prestataire());
+        pst.setString(1,p.getid_prestataire());
         pst.setString(2,p.getId_Entreprise());
         pst.setString(3,p.getNumero_telephone());
         pst.setString(4,p.getMail());

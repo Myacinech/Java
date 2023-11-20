@@ -35,7 +35,6 @@ public class EnchereController implements Initializable {
     private TableView<Enchere> table;
     @FXML
     private TableColumn<Enchere, String> tdTitre;
-    @FXML
     private TableColumn<Enchere, String> tdID;
     @FXML
     private TableColumn<Enchere, String> tdDecsrp;
@@ -55,6 +54,8 @@ public class EnchereController implements Initializable {
     private Button BtnModifier;
     @FXML
     private Button BtnSupprimer;
+    @FXML
+    private TableColumn<?, ?> tdid;
 
     /**
      * Initializes the controller class.

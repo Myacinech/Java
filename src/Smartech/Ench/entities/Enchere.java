@@ -12,17 +12,18 @@ import java.util.Date;
  * @author yacin
  */
 public class Enchere{
-    private String Titre;
     private String Id; 
+    private String Titre;
     private String Description;
     private Date dateDebut;
     private Date dateFin;
     private double offre_initial;
     
 
-    public Enchere(String Titre, String Id, String Description, Date dateDebut, Date dateFin, double offre_initial) {
-        this.Titre = Titre;
+    public Enchere( String Id, String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
+        
         this.Id = Id;
+        this.Titre = Titre;
         this.Description = Description;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
@@ -86,7 +87,7 @@ public class Enchere{
 
     @Override
     public String toString() {
-        return "Enchere{" + "Titre=" + Titre + ", Id=" + Id + ", Description=" + Description + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", offre_initial=" + offre_initial + '}';
+        return "Enchere{ Id=" + Id + ", Titre=" + Titre + ", Description=" + Description + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", offre_initial=" + offre_initial + '}';
     }
       
     
