@@ -30,7 +30,6 @@ public class PropositionController implements Initializable {
 
     @FXML
     private TableView<Proposition> table;
-    @FXML
     private TableColumn<Proposition, String> tdNom;
     @FXML
     private TableColumn<Proposition, String> tdIdEntr;
@@ -50,6 +49,8 @@ public class PropositionController implements Initializable {
     private Button BtnModifier;
     @FXML
     private Button BtnSupprimer;
+    @FXML
+    private TableColumn<?, ?> tdId;
 
     
     /**

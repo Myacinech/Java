@@ -30,14 +30,6 @@ public class Proposition {
     public Proposition() {
     }
 
-    public String getNom_prestataire() {
-        return id_prestataire;
-    }
-
-    public void setNom_prestataire(String nom_prestataire) {
-        this.id_prestataire = id_prestataire;
-        
-    }
     public String getId_Entreprise() {
         return Id_Entreprise;
     }
@@ -86,7 +78,7 @@ public class Proposition {
     }
       @Override
     public String toString() {
-        return "Proposition{" + "id_prestataire=" + id_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
+        return "Proposition{id_prestataire=" + id_prestataire + ", Id_Entreprise=" + Id_Entreprise + ", numero_telephone=" + numero_telephone + ", mail=" + mail + ", Titre=" + Titre + ", montant=" + montant + ", message=" + message + '}';
     }
 
     public void ajouterProposition() {
@@ -96,11 +88,12 @@ public class Proposition {
     }
 
     public String getid_prestataire() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return message;
     }
 
-    public void setid_prestataire(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setid_prestataire(String id_prestataire) {
+
+        this.id_prestataire= id_prestataire;    
     }
   
 }

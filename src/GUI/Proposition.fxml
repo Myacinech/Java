@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="850.0" style="-fx-background-color: #1454;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="GUI.PropositionController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="850.0" style="-fx-background-color: #1454;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PropositionController">
    <children>
       <TableView fx:id="table" layoutX="317.0" layoutY="174.0" prefHeight="234.0" prefWidth="518.0">
         <columns>
-          <TableColumn fx:id="tdNom" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="tdId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="tdIdEntr" prefWidth="75.0" text="Id Entrp" />
             <TableColumn fx:id="tdTel" prefWidth="75.0" text="N° Tel" />
             <TableColumn fx:id="tdMail" prefWidth="75.0" text="Mail" />
@@ -57,7 +56,7 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="Nom" layoutX="118.0" layoutY="155.0" />
+      <TextField fx:id="Id" layoutX="118.0" layoutY="155.0" />
       <TextField fx:id="Rech" layoutX="516.0" layoutY="129.0" />
       <TextField fx:id="Tel" layoutX="118.0" layoutY="224.0" />
       <TextField fx:id="id_Entr" layoutX="118.0" layoutY="192.0" />
@@ -65,7 +64,7 @@
       <TextField fx:id="Titre" layoutX="118.0" layoutY="291.0" />
       <TextField fx:id="Montant" layoutX="118.0" layoutY="326.0" />
       <TextField fx:id="Message" layoutX="118.0" layoutY="359.0" />
-      <Label layoutX="34.0" layoutY="160.0" text="Nom">
+      <Label layoutX="34.0" layoutY="160.0" text="Id">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

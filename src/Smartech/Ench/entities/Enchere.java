@@ -12,7 +12,7 @@ import java.util.Date;
  * @author yacin
  */
 public class Enchere{
-    private String Id; 
+    
     private String Titre;
     private String Description;
     private Date dateDebut;
@@ -20,9 +20,9 @@ public class Enchere{
     private double offre_initial;
     
 
-    public Enchere( String Id, String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
+    public Enchere( String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
         
-        this.Id = Id;
+        
         this.Titre = Titre;
         this.Description = Description;
         this.dateDebut = dateDebut;
@@ -45,13 +45,7 @@ public class Enchere{
         this.Titre = Titre;
     }
 
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String Id) {
-        this.Id = Id;
-    }
+   
 
     public String getDescription() {
         return Description;
@@ -87,7 +81,11 @@ public class Enchere{
 
     @Override
     public String toString() {
-        return "Enchere{ Id=" + Id + ", Titre=" + Titre + ", Description=" + Description + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", offre_initial=" + offre_initial + '}';
+        return "Enchere{ Titre=" + Titre + ", Description=" + Description + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", offre_initial=" + offre_initial + '}';
+    }
+
+    public Object getId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
       
     

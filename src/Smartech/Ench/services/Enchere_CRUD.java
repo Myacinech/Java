@@ -24,7 +24,7 @@ public class Enchere_CRUD
     
     public void ajouterEnchere(){
         String requete; 
-        requete = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES ('Voirie3', 123547892111, 'travaux de chaussée d''un quartier résidentiel', '2023-02-10', '2023-03-10', 250000);";
+        requete = "INSERT INTO Enchere (Titre, Description, dateDebut, dateFin, offre_initial) VALUES ('Voirie3','travaux de chaussée d''un quartier résidentiel', '2023-02-10', '2023-03-10', 250000);";
         Statement st ;
         try {
             st = (Statement) new MyBD().getCnx().createStatement();
@@ -38,15 +38,15 @@ public class Enchere_CRUD
     public void ajouterEnchere2(Enchere e ){
         try {
         String requete2; 
-        requete2 = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES (?, ?, ?, ?, ?, ?);";
+        requete2 = "INSERT INTO Enchere (Titre, Description, dateDebut, dateFin, offre_initial) VALUES (?, ?, ?, ?, ?);";
         PreparedStatement pst;
         pst = new MyBD().getCnx().prepareStatement(requete2);
-        pst.setString(1,e.getId());
-        pst.setString(2,e.getTitre());
-        pst.setString(3,e.getDescription());
-        pst.setDate(4, (Date) e.getDateDebut());
-        pst.setDate(5, (Date) e.getDateFin());
-        pst.setDouble(6,e.getOffre_initial());
+        
+        pst.setString(1,e.getTitre());
+        pst.setString(2,e.getDescription());
+        pst.setDate(3, (Date) e.getDateDebut());
+        pst.setDate(4, (Date) e.getDateFin());
+        pst.setDouble(5,e.getOffre_initial());
         pst.executeUpdate();
         System.out.println("votre Enchere a été ajoute avec succès ");
                     } catch (SQLException ex) {
@@ -54,6 +54,7 @@ public class Enchere_CRUD
         }
     }
     
+    @SuppressWarnings("empty-statement")
     public List<Enchere> afficherEnchere(){
         List<Enchere> MyList;
         MyList = new ArrayList<>();
@@ -68,7 +69,6 @@ public class Enchere_CRUD
             Enchere e;
             e= new Enchere(); 
             e.setTitre(rs.getString("Titre"));
-            e.setId(rs.getString("Id"));
             e.setDescription(rs.getString("Description"));
             e.setDateDebut(rs.getDate("dateDebut"));
             e.setDateFin(rs.getDate("dateFin"));
@@ -121,7 +121,7 @@ public class Enchere_CRUD
         
         for (Enchere enchere : encheres)
         {
-            if (enchere.getId().contains(d))
+            if (enchere.getTitre().contains(d))
             {
                 resultats.add(enchere);
                 

@@ -20,7 +20,7 @@ public class Proposition_CRUD {
     
     public void ajouterProposition(){
         String requete; 
-        requete = "INSERT INTO proposition (id_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES ('Voirie', 12,12354789, 'travaux@esprit.tn', 'voirie1', 250000,' je suivrai les regles et le cahier de charge' );";
+        requete = "INSERT INTO proposition (id_prestataire,Id_Entreprise, numero_telephone, Mail, Titre, Montant, Message) VALUES (1, 12,12354789, 'travaux@esprit.tn', 'voirie1', 250000,' je suivrai les regles et le cahier de charge' );";
         Statement st ;
         try {
             st = (Statement) new MyBD().getCnx().createStatement();
@@ -50,15 +50,16 @@ public class Proposition_CRUD {
             System.err.println(ex.getMessage());
         }
     }
+    @SuppressWarnings("empty-statement")
     public List<Proposition> afficherProposition(){
         List<Proposition> myList;
         myList = new ArrayList<>();
     try {
         String req3;
         req3 = " SELECT * FROM Proposition";
-        Statement st = null; 
+        Statement st; 
                 st = (Statement) new MyBD().getCnx().createStatement();
-        ResultSet rs=null;
+        ResultSet rs;
             rs = st.executeQuery (req3);
     while (rs.next());
             Proposition p; 
@@ -129,7 +130,7 @@ public class Proposition_CRUD {
            return resultats;     
     }
         
-    public void ajouterEnchere(){
+    /*public void ajouterEnchere(){
         String requete; 
         requete = "INSERT INTO Enchere (Titre, Id, Description, dateDebut, dateFin, offre_initial) VALUES ('Voirie3', 123547892111, 'travaux de chaussée d''un quartier résidentiel', '2023-02-10', '2023-03-10', 250000);";
         Statement st ;
@@ -141,5 +142,5 @@ public class Proposition_CRUD {
             System.err.println(ex.getMessage());
         }
     }  
-   
+   */
  }
