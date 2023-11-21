@@ -13,6 +13,7 @@ import java.util.Date;
  */
 public class Enchere{
     
+    private String id;
     private String Titre;
     private String Description;
     private Date dateDebut;
@@ -20,9 +21,10 @@ public class Enchere{
     private double offre_initial;
     
 
-    public Enchere( String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
+    public Enchere( String id,String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
         
         
+        this.id=id;
         this.Titre = Titre;
         this.Description = Description;
         this.dateDebut = dateDebut;
@@ -32,11 +34,25 @@ public class Enchere{
 
     public Enchere() {
     }
+    
+     public Enchere(String Titre, String Description, Date dateDebut, Date dateFin, double offre_initial) {
+        this.Titre = Titre;
+        this.Description = Description;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.offre_initial = offre_initial;
+    }
 
     public Enchere(int aInt, String string, String string0, int aInt0, int aInt1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+public String getid() {
+        return id;
+    }
 
+    public void setid(String id) {
+        this.id = id;
+    }
     public String getTitre() {
         return Titre;
     }
@@ -44,8 +60,6 @@ public class Enchere{
     public void setTitre(String Titre) {
         this.Titre = Titre;
     }
-
-   
 
     public String getDescription() {
         return Description;

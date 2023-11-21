@@ -9,6 +9,7 @@ package Smartech.Ench.entities;
  * @author yacin
  */
 public class Proposition {
+    private String Id ;
     private String id_prestataire;
     private String Id_Entreprise; 
     private String numero_telephone;
@@ -17,7 +18,17 @@ public class Proposition {
     private double montant;
     private String message;
 
-    public Proposition(String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
+    public Proposition(String Id , String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
+         this.Id = Id;
+        this.id_prestataire = id_prestataire;
+        this.Id_Entreprise = Id_Entreprise;
+        this.numero_telephone = numero_telephone;
+        this.mail = mail;
+        this.Titre = Titre;
+        this.montant = montant;
+        this.message = message;
+    }
+    public Proposition( String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
         this.id_prestataire = id_prestataire;
         this.Id_Entreprise = Id_Entreprise;
         this.numero_telephone = numero_telephone;
@@ -28,6 +39,13 @@ public class Proposition {
     }
 
     public Proposition() {
+    }
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String Id) {
+        this.Id = Id;
     }
 
     public String getId_Entreprise() {
@@ -53,12 +71,14 @@ public class Proposition {
         this.mail = mail;
     }
 
-    public String getTitre() {
-        return Titre;
+    // Méthode pour accéder à l'attribut Titre de la classe Enchere
+    public String getTitreEnchere(Enchere enchere) {
+        return enchere.getTitre();
     }
 
-    public void setTitre(String Titre) {
-        this.Titre = Titre;
+    
+    public void setTitre( String Titre) {
+        this.Titre=Titre;
     }
 
     public double getMontant() {

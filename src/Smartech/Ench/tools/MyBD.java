@@ -17,6 +17,10 @@ import java.util.logging.Logger;
  */
 public class MyBD {
 
+    public static Object getInstance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String url="jdbc:mysql://localhost:3306/env";
     public String  login="root";
     public  String pwd="";
