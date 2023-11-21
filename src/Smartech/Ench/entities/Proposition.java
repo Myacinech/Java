@@ -10,7 +10,7 @@ package Smartech.Ench.entities;
  */
 public class Proposition {
     private String Id ;
-    private String id_prestataire;
+    private int id_prestataire;
     private String Id_Entreprise; 
     private String numero_telephone;
     private String mail;
@@ -18,7 +18,7 @@ public class Proposition {
     private double montant;
     private String message;
 
-    public Proposition(String Id , String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
+    public Proposition(String Id , int id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
          this.Id = Id;
         this.id_prestataire = id_prestataire;
         this.Id_Entreprise = Id_Entreprise;
@@ -28,7 +28,7 @@ public class Proposition {
         this.montant = montant;
         this.message = message;
     }
-    public Proposition( String id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
+    public Proposition( int id_prestataire, String Id_Entreprise, String numero_telephone, String mail, String Titre, double montant, String message) {
         this.id_prestataire = id_prestataire;
         this.Id_Entreprise = Id_Entreprise;
         this.numero_telephone = numero_telephone;
@@ -72,8 +72,13 @@ public class Proposition {
     }
 
     // Méthode pour accéder à l'attribut Titre de la classe Enchere
-    public String getTitreEnchere(Enchere enchere) {
-        return enchere.getTitre();
+     private Enchere enchere;
+     public String getTitreEnchere() {
+        if (enchere != null) {
+            return enchere.getTitre();
+        } else {
+            return "No associated Enchere";
+        }
     }
 
     
@@ -104,14 +109,14 @@ public class Proposition {
     public void ajouterProposition() {
     }
 
-    public void ajouterProposition2(Proposition PCR) {
+    public void ajouterProposition2(Proposition PCR, Enchere e ) {
     }
 
-    public String getid_prestataire() {
-       return message;
+    public int getid_prestataire() {
+       return id_prestataire;
     }
 
-    public void setid_prestataire(String id_prestataire) {
+    public void setid_prestataire(int id_prestataire) {
 
         this.id_prestataire= id_prestataire;    
     }

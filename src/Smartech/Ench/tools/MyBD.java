@@ -4,12 +4,10 @@
  * and open the template in the editor.
  */
 package Smartech.Ench.tools;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -17,9 +15,20 @@ import java.util.logging.Logger;
  */
 public class MyBD {
 
-    public static Object getInstance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static MyBD instance;
+    private Connection connection;
+
+    
+    public static synchronized MyBD getInstance() {
+        if (instance == null) {
+            instance = new MyBD();
+        }
+        return instance;
     }
+    
+    /*public static Object getInstance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
 
     public String url="jdbc:mysql://localhost:3306/env";
     public String  login="root";
