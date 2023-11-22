@@ -10,9 +10,14 @@ import Smartech.Ench.tools.MyBD;
 import com.mysql.jdbc.Connection;
 import java.net.URL;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,6 +28,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.resource.cci.ResultSet;
+import static org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.controller;
 
 /**
  * FXML Controller class
@@ -64,14 +70,68 @@ public class EnchereController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    private void BtnAjouter() {
-    	String query = "insert into enchere values("+tdTitre.getText()+",'"+tdID.getText()+"','"+tdDecsrp.getText()+"',"+tdDD.getText()+","+tdDF.getText()+","+tdOffre.getText()+")";
-    	executeQuery(query);
-	afficherProposition();
+        // It's better to initialize with empty list instead of null
+        ObservableList<Enchere> list = FXCollections.observableArrayList();
+        table.setItems(list);
+
+        // Set up cell value factories for columns
+        tdTitre.setCellValueFactory(new PropertyValueFactory<>("Titre"));
+        tdID.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        tdDecsrp.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        tdDD.setCellValueFactory(new PropertyValueFactory<>("DateDebut"));
+        tdDF.setCellValueFactory(new PropertyValueFactory<>("DateFin"));
+        tdOffre.setCellValueFactory(new PropertyValueFactory<>("Offre"));
     }
+        @FXML
+        private void BtnAjouter(ActionEvent event ) throws SQLException 
+        
+        {
+        
+            try {
+        
+                String query = "INSERT INTO enchere (Titre, ID, Description, DateDebut, DateFin, Offre) VALUES (?, ?, ?, ?, ?, ?)";
+
+        
+                MyBD connection = getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        // Set the values for the placeholders in the query
+        preparedStatement.setString(1, tdTitre.getText());
+        preparedStatement.setString(2, tdID.getText());
+        preparedStatement.setString(3, tdDecsrp.getText());
+        preparedStatement.setString(4, tdDD.getText());
+        preparedStatement.setString(5, tdDF.getText());
+        preparedStatement.setDouble(6, Double.parseDouble(tdOffre.getText())); // Assuming Offre is of type double
+
+        // Execute the update
+        preparedStatement.executeUpdate();
+
+        // Close the prepared statement
+        preparedStatement.close();
+
+        // Refresh the displayed data
+        afficherProposition();
+    } catch (NumberFormatException e) {
+                
+
+    }
+}
+
     
+      @FXML
+    private void addservice(ActionEvent event) {
+       try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterService.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) btnajouterservice.getScene().getWindow(); // Obtenir la fenêtre actuelle
+        stage.setScene(scene);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+        
+    }
     private void BtnModifier() {
     String query = "UPDATE enchere SET Titre='"+tdTitre.getText()+"',Description='"+tdDecsrp.getText()+"',datedebut="+tdDD.getText()+",datefin="+tdDF.getText()+",Offre="+tdOffre.getText()+ " WHERE ID="+tdID.getText()+"";
     executeQuery(query);
@@ -118,7 +178,7 @@ public class EnchereController implements Initializable {
 			rs = (ResultSet) st.executeQuery(query);
 			Enchere enchere;
 			while(rs.next()) {
-				enchere = new Enchere(rs.getInt("Titre"),rs.getString("Id"),rs.getString("Author"),rs.getInt("Year"),rs.getInt("Pages"));
+				enchere = new Enchere(rs.getString("Titre"),rs.getInteger("Id"),rs.getString("Author"),rs.getInt("Year"),rs.getInt("Pages"));
 				enchereList.add(enchere);
 				}
 		} catch (SQLException e) {

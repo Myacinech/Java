@@ -43,6 +43,10 @@ public class Enchere{
         this.offre_initial = offre_initial;
     }
 
+    public Enchere(int enchereId, String titre, String description, Date dateDebut, Date dateFin, double offreInitial) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 public String getid() {
         return id;
