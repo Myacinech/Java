@@ -80,20 +80,21 @@ public class Proposition_CRUD {
         return myList;
     }
 
-   public void modifierProposition(Proposition p, Integer idprestataire) {
+   public void modifierProposition(Proposition p, Integer Id_prestataire) {
     try {
+        MyBD mc = new MyBD();
         Enchere e = null; 
-        String sql = "UPDATE proposition SET id_prestataire=?, Numero_telephone=?, Mail=?, Titre=?, Montant=?, Message=? WHERE Id_Prestataire=?";
+        String sql = "UPDATE proposition SET id_prestataire=?,Id_Entreprise=?, Numero_telephone=?, Mail=?, Titre=?, Montant=?, Message=? WHERE Id=?";
         
         try (PreparedStatement pst = MyBD.getInstance().getCnx().prepareStatement(sql)) {
             pst.setInt(1, p.getid_prestataire());
             pst.setString(2, p.getId_Entreprise());
             pst.setString(3, p.getNumero_telephone());
             pst.setString(4, p.getMail());
-            pst.setString(5, p.getTitreEnchere(e));
+            pst.setString(5,p.getTitreEnchere());
             pst.setDouble(6, p.getMontant());
             pst.setString(7, p.getMessage());
-            pst.setInt(8, idprestataire);
+            pst.setInt(8, Id_prestataire);
             
             int rowsAffected = pst.executeUpdate();
 

@@ -78,27 +78,32 @@ public class Smartech_Main {
         propositionCRUD.afficherProposition().forEach((proposition) -> {
             System.out.println(proposition);
         });
+       /* System.out.println("Affichage des Proposition :");
+        propositionCRUD.afficherProposition().forEach((proposition) -> {
+            System.out.println(proposition);
+        });*/
 
            // Uncomment the following line and set the actual ID value
-          // Integer idToModify = 5;
+           
 
           // Create a Proposition object with the modifications
-          Proposition propositionToModify = new Proposition();
-          propositionToModify.setid_prestataire(6);
-          propositionToModify.setId_Entreprise("7");
-          propositionToModify.setNumero_telephone("123456789");
-          propositionToModify.setMail("travaux@esprit.tn");
-          propositionToModify.setTitre("voirie3");
-          propositionToModify.setMontant(300000);
-          propositionToModify.setMessage("je suivrai les règles et le cahier de charge");
+          Integer idTModify = 64;
+          Proposition propositionTModify = new Proposition();
+          propositionTModify.setid_prestataire(5);
+          propositionTModify.setId_Entreprise("7");
+          propositionTModify.setNumero_telephone("123");
+          propositionTModify.setMail("trav@esprit.tn");
+          propositionTModify.setTitre("voirie3");
+          propositionTModify.setMontant(300000);
+          propositionTModify.setMessage("je suivrai");
 
           // Call the modifierProposition method
-          propositionCRUD.modifierProposition(propositionToModify, idToModify);
+           propositionCRUD.modifierProposition(propositionTModify, idTModify);
 
 
         // Delete a Proposition (replace 'ID_TO_DELETE' with the actual ID)
-        //String idToDelete = "11";
-        propositionCRUD.supprimerProposition(idToDelete);
+        String idTDelete = "2";
+        propositionCRUD.supprimerProposition(idTDelete);
 
         // Display Propositions after deletion
         System.out.println("Affichage des Propositions après suppression:");
@@ -107,7 +112,7 @@ public class Smartech_Main {
         }
 
         // Search for Propositions containing a certain value
-        String searchValue = "7";
+        String searchValue = "5";
         try {
             List<Proposition> searchResults = propositionCRUD.rechercherProposition(searchValue);
             System.out.println("Résultats de la recherche pour '" + searchValue + "':");

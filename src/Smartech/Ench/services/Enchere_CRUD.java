@@ -99,7 +99,9 @@ public class Enchere_CRUD
         pst.setInt(6, d);
 
         return pst.executeUpdate();
-    } catch (SQLException ex) {
+        
+    } 
+    catch (SQLException ex) {
         System.err.println("Erreur lors de la modification de l'enchère : " + ex.getMessage());
         return 0;
     }
